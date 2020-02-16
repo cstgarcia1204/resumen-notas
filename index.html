@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Mis Notitas (:">
+    <title>Resumen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://i.imgur.com/24OxH90.png">
+</head>
+<body>
+   <div id="content">
+       <h1>Resumen NO ofiacial c:</h1>
+       <p>A continuación les trataré de explicar el paso a paso de lo que vimos en el workshop de AWS</p>
+ 
+       <p>Primero que nada empezare a explicar de donde sacamos los links para que se den una idea</p>
+       <img src="https://i.imgur.com/bLpjbrs.png" alt="fuente-links">
+       <br>
+       <a href="https://docs.google.com/spreadsheets/d/1ZUJvFG3NziNdnE7DFz7f0Pm8tMa_ClFurpIUu7lqP4o/edit?usp=sharing">Link de archivo excel</a>
+       <p>Esta lista la dió el instructor asi que nos tenia que otorgar permisos para entrar,
+           agrego un link en la columna H, copiamos y pegamos en el navegador y resulto esto:
+       </p>
+       <img src="https://i.imgur.com/C0MeZ57.png" alt="oh-no-enlace-roto">
+       <p>Ooooh nooo! caduco el permiso )=... todo esté ejemplo lo hice con las sesión que ya tenía en el navegador</p>
+       <a href="https://dashboard.eventengine.run/login?hash=bbba89945dfd">Link de inicio espacio Laboratoria (yo use el renglón 11 columna F del archivo de excel)</a>
+       <br><br>
+       <p>Asi que todo comienza AQUIIIIII, es la pantalla principal</p>
+       <p>Aqui el siguiente paso es click en el botón de "AWS Conosole"...</p>
+       <img src="https://i.imgur.com/cFxAO7a.png" alt="primerPantalla">
+       <br><br>
+       
+       <br>
+       <p>La siguiente pantalla es:</p>
+       <img src="https://i.imgur.com/UgtIvUr.png" alt="pantalla-principal">
+       <br>
+       <p>Podemos elegir la región en la cual estara nuestro servidor virtual en la nube</p>
+       <p>Se recomienda la region "us-esast-1" ya que es en la que se cargan todos los nuevos servicios, pero depende el tipo de proyecto que se este creando y de acuerdo a la region cambiara el costo del servicio</p>
+       <p>En esta intefaz navegamos hasta la parte superior donde dice "Servicios" </p>
+       <img src="https://i.imgur.com/8uRTKP6.png" alt="regiones">
+      
+       <img src="https://i.imgur.com/7KB33vI.png" alt="servicios-pantalla">
+       <p>Esta pantalla notese la parte de Informatica y las siglas "EC2" (que significan el servicio de Amazon "Elastic Compute Cloud", 
+        esa opcion es la que debemos seleccionar ...
+       </p>
+       <p>"EC2" crea una Red Privada Virtual, la nueva sesion crea una IP elásitca</p>
+       <p>* definicion de amazon*: Una dirección IP elástica es una dirección IPv4 pública, a la que se puede tener acceso desde Internet. 
+           Si la instancia no tiene una dirección IPv4 pública, puede asociar una dirección IP elástica con su instancia para permitir la comunicación con Internet</p>
+       <img src="https://i.imgur.com/7nM2q44.png" alt="emc-seleccionar">
+       <br><br>
+       <p>
+        Lo que sigue es en el menú izquierdo se encuentra la sección de "Instances" ahi tenemos que seleccionarla (esta en letritas naranjas)
+       </p>
+       <img src="https://i.imgur.com/3RwRuEY.png" alt="emc-instances">
+       
+       <br>
+       <p>Aparece un botón azul que dice "Launch Instance" le damos click>></p>       
+       <img src="https://i.imgur.com/6QMbckr.png" alt="instances-btn-launch">
+      
+       <br><br><br><br>
+       <h3>En este punto aparecen los benditos pasoooooos!!</h3>
+       <p>Paso 1 seleccionamos el sistema operativo preferido</p>
+       <p>En nuestro caso seleccionamos "Ubuntu 18.04" y en el botón de "Next"</p>
+       <img src="https://i.imgur.com/OX7oc07.png" alt="pasos-amazon">
+       <img src="https://i.imgur.com/I4vR5VR.png" alt="ubuntu-18.04">
+       <p>Paso 2: Seleccionaremos instancia de proposito general</p>
+       <img src="https://i.imgur.com/ppapohF.png" alt="step2">
+       <p>En este caso seleccionamos el tipo "t2.medium" y eso dependera del proyecto en el que se vaya a trabajar, cick en Next</p>
+       <img src="https://i.imgur.com/XifCezV.png" alt="type-general-p">
+       <p>En el paso 3 dejamos las configuraciones que dió por default y click en siguiente --->>>></p>
+       <img src="https://i.imgur.com/8F5fojL.png" alt="paso3">
+       <p>El paso 4 indicamos el tamaño de espacio que tendra nuestro disco duro del servidor, nosotras dejamos el valor por defecto de 8 gigabytes</p>
+       <img src="https://i.imgur.com/QpY5zHy.png" alt="paso4">
+       <p>En el paso 5 es recomendable crear tags para reconocer cada volumen e instancia que estamos creando, sino todo seran puros id's alfanumericos</p>
+       <img src="https://i.imgur.com/GV5UZfr.png" alt="paso5">
+       <img src="https://i.imgur.com/BRnY18y.png" alt="creando-tag">
+       <br><br><br>
+       <p>ATENCION::: este paso no. 6 es muy importante porque de aquí dependerá si puedes ver o no la pagina web, es la configuración de seguridad, 
+           desde donde se pueden conectar, el valor por defecto es de tipo "SSH y Costum 0.0.0.0/0" indica que acepta conexiones de todo el mundo.
+       </p>
+       <img src="https://i.imgur.com/oB3KGur.png" alt="paso6-importante">
+       <img src="https://i.imgur.com/k8UJrM2.png" >
+       <p>Tambien podrias configurar con la opción "My IP" que solamente dejaria entrar con la red del lugar en donde estas (por ejemplo la ip de laboratoria)</p>
+       <img src="https://i.imgur.com/Hl84kfW.png" >
+       <p>Se debe agregar una regla de http para que se habilite el puerto 80 y permita la comunicación de nuestra pc al servidor.</p>
+       <img src="https://i.imgur.com/CHHi1HG.png" >
+       <br>
+       <p>El paso 7 es una revisión de toda la configuración que se ha hecho, los warnings que arroja es porque 
+        en la parte de seguridad dimos acceso a todos con la configuracion  de valores 0. En este review de los pasos podemos hacer cambios.
+        Si estamos seguras de que todo es correcto debemos hacer click en el boton "Launch".
+     </p>
+       <img src="https://i.imgur.com/B8rXfhG.png" alt="paso7">
+       <img src="https://i.imgur.com/mKqBCpv.png">
+       <img src="https://i.imgur.com/8TZG2eL.png">
+       
+        <br><br><br><br>
+        <h3>Ojo!! otro paso importante desde aquí!</h3>
+        <p>Este paso es esencial para poder tener éxito en la configuración de nuestro servidor crear una key publica y otra key privada</p>
+        <p> Esta "key pair" que genera el sistema se tiene que descargar</p>
+        <img src="https://i.imgur.com/nMY3ZXm.png" alt="public-key">
+        <p>Seleccionamos la opción de "Create a new key pair"</p>
+        <p>Y le asignamos un nombre, esto va a generar un archivo</p>
+        <img src="https://i.imgur.com/sUmkv7C.png">
+        <p>El recuadro azul advierte que si no puedes descargar el archivo que genera, no vas a poder conectarte, presionamos el boton de "Download Key Pair"</p>
+        <img src="https://i.imgur.com/BsXBRfx.png" alt="warning">
+        <p>Guardamos nuestro archivo ".pem"</p>
+        <img src="https://i.imgur.com/ZCLBSDC.png">
+        <p>** Importante verificar que se descargo antes de continuar con la configuracion**</p>
+        <p>Ahora si podemos hacer click en "Launch Instances"</p>   
+        <img src="https://i.imgur.com/indhmYk.png">
+        <br><br>
+        <p>El sistema nos indica que ha creado las instancias correctamente, click en boton "ver instancias" </p>
+        <img src="https://i.imgur.com/bavh2LU.png" alt="instancias-creadas">
+        <img src="https://i.imgur.com/oHb3Lnm.png" >
+       <br><br>
+       <p>La interfaz siguiente nos muestra todas la instancias creadas, y el status de cada una, 
+        solo podremos indentificar cada instancia por la etiqueta que le asignamos
+       </p>
+       <img src="https://i.imgur.com/JAKGfqt.png" alt="status-instancias">
+       <p>Filtramo con el nombre de la etiqueta</p>
+       <img src="https://i.imgur.com/zyKzBOf.png">
+       <p>Seleccionamos el checkbox de la instancia y se habilitará el boton de "Connect"</p>
+       <img src="https://i.imgur.com/zyKzBOf.png" alt="filtro-instancias">
+       <br>
+       <p>Tambien podemos hacer click al boton de "Actions" y seleccionar la opción "connect"</p>
+       <img src="https://i.imgur.com/dn1UvpN.png" alt="conect">
+       <p>Click en "conectar"</p>
+       <img src="https://i.imgur.com/wIuArry.png" >
+       <br><br>
+       <h3>Ojo!!!! aqui hay dos formas para configurar la conexion y depende del sistema operativo que usemos, 
+        en mi caso es Linux (pero tmb aplica para las mac). Hay otra configuración a partir de este punto si el sistema que usas es Windows.
+        Dicho lo anterior a continuación se desglosan los pasos para linux.
+       </h3>
+       <img src="https://i.imgur.com/Udy4Is7.png" alt="option-conect">
+       
+       <br><br><br>
+       <p>Tenemos que abrir la ternminal y colocarnos en la carpeta donde se descargo el archivo con extension ".pem", este ejemplo tiene el nombre de "powerPilot"</p>
+       <img src="https://i.imgur.com/FHaXHl7.png" >
+       <img src="https://i.imgur.com/T39DAF5.png" alt="terminal-descargas">
+       <p>A continuación copiamos de la pagina de amazon, de la ventana "Connect to your instance", los comandos que se muestra en el paso no.3 </p>
+       <img src="https://i.imgur.com/QbAiDDW.png" alt="chmod-400">
+       <img src="https://i.imgur.com/wJXxriN.png" alt="chmod-400-after">
+       <p>Seleccionamos el siguiente codigo que se encuentra en la pagina de aws, el que viene en el ejmeplo</p>
+       <img src="https://i.imgur.com/vgLB1Wh.png" alt="example-copy">
+       <img src="https://i.imgur.com/GoM07gY.png" >
+       <p>Una vez que copiamos y pegamos esa parte de codigo, empezara a configurar el sistema para conectar al servidor virtual de amazon</p>
+       <img src="https://i.imgur.com/P0A6HHO.png" alt="connecting-in-terminal">
+       <p>Si la configuración fue correcta aparecera en la terminal el nombre del sistema operativo que seleccionamos en la configuracion, en este caso es "ubuntu"</p>
+       <img src="https://i.imgur.com/RNmJ7eW.png" alt="connected">
+       <p>A continuación pondremos el siguiente codigo: sudo apt-get update  / hará las actualizaciones necesarias para la unidad virtual</p>
+       <img src="https://i.imgur.com/SmORRL5.png" alt="update">
+       <img src="https://i.imgur.com/zVn563b.png" alt="updating">
+       <img src="https://i.imgur.com/9irPnpf.png" alt="update-done">
+       <p>Colocamos el siguiente codigo: sudo apt-get install apache2  / Estos comandos instalan apache el cual es un servidor web de open source que permite usar el protocolo http
+       </p>
+       <p>
+        En mis palabras podria decir que estamos creando el servidor web (con apache)>> dentro del espacio virtual que creamos con el sistema operativo ubuntu >> que se encuentra en los servicios de amazon.</p>
+       <img src="https://i.imgur.com/Mq530LM.png" alt="installing-apache2">
+       <img src="https://i.imgur.com/lnRpoYW.png" >
+       <img src="https://i.imgur.com/8OYo3zz.png" >
+       <img src="https://i.imgur.com/z9fbyYU.png" >
+       <p>Una vez que se instala apache, verificamos el nombre del directorio actual con el comando: pwd</p>
+       <img src="https://i.imgur.com/lmvtqgu.png" alt="pdw-in-ubuntu">
+       <p>Ahora podemos verificar si se instalo correctamente apache, abriendo el html que genera por default apache.
+           Para poder acceder tenemos que ir a la plataforma de aws y copiar la direccion Publica DNS y abrirla en el navegador
+       </p>
+       <img src="https://i.imgur.com/jj1XwTl.png" alt="public-dns">
+       <img src="https://i.imgur.com/K7IVVhr.png" >
+       <p>Colocamos la direccion DNS</p>
+       <img src="https://i.imgur.com/nnh8IMM.png" alt="browser">
+       <p>html por default... (= ya tenemos algo alojado </p>
+       <img src="https://i.imgur.com/9X7faVR.png" >
+       <img src="https://i.imgur.com/EGuVZZN.png" >
+       <p>Una vez que verificamos que se visualiza la pagina de nuestro dominio, ahora la podemos editar, el primer paso es borrar todo lo que contiene ese HTML.
+           El comando para borrar es: sudo sudo rm /var/www/html/index.html
+       </p>
+       <img src="https://i.imgur.com/ggyRI3t.png" alt="rm-index">
+       <img src="https://i.imgur.com/1Vv7WqU.png" >
+       <p>Ahora comprobamos que se haya borrado el index, y tambien podemos comprobar que el Puerto 80 este habilitado (de lo contrario no se mostraria nada) </p>
+       <img src="https://i.imgur.com/MlEyomk.png" alt="dns-no-index">
+       <img src="https://i.imgur.com/wjFVf0V.png" >
+       <p>Es en esta parte es donde podemos empezar editar el index con nuestro contenido</p>
+       <p>Volvemos a la terminal y colocamos el siguiente comando: sudo nano /var/www/html/index.html</p>
+       <img src="https://i.imgur.com/dY6Kj6g.png" alt="terminal-nano">
+       <p>Lo que hace nano es que abre el editor de texto para la terminal</p>
+       <img src="https://i.imgur.com/RK4Fj3B.png" alt="nano-edit">
+       <p>Ahora podemos colocar contenido en el "index.hml"</p>
+       <img src="https://i.imgur.com/wBS8dUh.png" alt="editing">
+       <p>Para guardar los cambios debemos ver las opciones de la parte inferior</p>
+       <img src="https://i.imgur.com/KAjA2TL.png" alt="exit-option">
+       <p>El caracter "^" es equivalente a control asi que si pulsamos "ctrl+x" abrira la opcion de salir del editor</p>
+       <img src="https://i.imgur.com/42j7mSq.png" >
+       <p>Enter --> </p>
+       <img src="https://i.imgur.com/re0IJPK.png" alt="enter-option">
+       <p>Nos regresa a la terminal ubuntu</p>
+       <img src="https://i.imgur.com/wWn79zO.png" >
+       <p>Regresamos al navegador para comprobar los cambios</p>
+       <img src="https://i.imgur.com/01wk7iE.png" alt="refresh">
+       <img src="https://i.imgur.com/Hg00gAo.png" alt="our-edition">
+       <img src="https://i.imgur.com/16qxFTC.png" >
+       <p>Cada vez que se tenga que editar el index deberemos volver con el comando: sudo nano /var/www/html/index.html     y seguir los pasos en la terminal</p>
+       <img src="https://i.imgur.com/4vfQyNG.png">
+       <img src="https://i.imgur.com/NYdKIJl.png" >
+       <img src="https://i.imgur.com/LTiDh3B.png" >
+       <img src="https://i.imgur.com/Cp3aPYe.png" >
+       <img src="https://i.imgur.com/SQHEsV9.png" >
+       <img src="https://i.imgur.com/aKohz5s.png" >
+       <br><br><br><br>
+       <h3>Has llegado hasta este punto????? bueno ahora tratare de crear otra instancia pero para la configuracion de windows... es donde se utiliza el famoso "putty"</h3>
+       <p>Repeti todos los 7 pasos que aws indica y el tag que le puse fue "powerPilotDos", descargue el .pem</p>
+       <img src="https://i.imgur.com/kXkio87.png" >
+       <img src="https://i.imgur.com/EwM4Lj9.png" >
+       <img src="https://i.imgur.com/8MNBK1n.png" >
+       <img src="https://i.imgur.com/GMLF1k6.png" >
+       <img src="https://i.imgur.com/G5AbZto.png" >
+       <img src="https://i.imgur.com/IQ9FqVn.png" >
+       <h3>Aqui es donde debes descargar "putty" si tienes windows</h3>
+       <img src="https://i.imgur.com/uk5jsFj.png" alt="link-download-putty">
+       <img src="https://i.imgur.com/88ECcMj.png" alt="download-putty">
+       <img src="https://i.imgur.com/MCb4Cmc.png" >
+       <p>Y lastima :( como no tengo windows no se puede configurar... </p>
+       <img src="https://i.imgur.com/1tF0SUw.png">
+       <br><br>
+       <p>Si alguien quiere cooperar las screenshots para mostrar el flujo de la configuración con putty son bienvenidas</p>
+       <br><br>
+       <p>Hasta aqui mi reporte!! (: espero que les haya sido de utilidad</p>
+       <img src="https://i.imgur.com/muns5td.png" alt="gracias-por-esto">
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+   </div> 
+</body>
+</html>
